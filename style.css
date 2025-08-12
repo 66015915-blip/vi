@@ -1,0 +1,64 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f7f7f7, #e499d7);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #d12abb;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    width: 90vw;           /* เพิ่มบรรทัดนี้ */
+    max-width: 1000px;     /* เพิ่มบรรทัดนี้ */
+    min-height: 600px;
+    padding: 32px 24px;    /* เพิ่มบรรทัดนี้ */
+    box-sizing: border-box;/* เพิ่มบรรทัดนี้ */
+    background: #fff8fcbb; /* เพิ่มพื้นหลังโปร่งใสเล็กน้อย */
+    border-radius: 20px;   /* เพิ่มความโค้ง */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08); /* เพิ่มเงา */
+    
+}
+
+.content h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+}
+
+.content p {
+    font-size: 1.5em;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    background: rgb(255, 112, 243);
+    border-radius: 50% 50% 50% 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: hsl(313, 100%, 53%);
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+}
